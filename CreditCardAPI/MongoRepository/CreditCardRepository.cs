@@ -28,12 +28,9 @@ namespace CreditCardAPI.MongoRepository
             return await creditCardContext.CreditCards.Find(x => true).ToListAsync();
         }
 
-        public async Task<CreditCard> GetCreditCard(string id)
+        public async Task<CreditCard> GetCreditCard(string customerId)
         {
-            ObjectId internalId;
-            if (!ObjectId.TryParse(id, out internalId))
-                internalId = ObjectId.Empty;
-            var filter = Builders<CreditCard>.Filter.Eq(s => s._id, internalId);
+            var filter = Builders<CreditCard>.Filter.Eq(s => s.customerId, customerId);
             var result = await creditCardContext.CreditCards.FindAsync<CreditCard>(filter);
             return await result.FirstOrDefaultAsync(); ;
         }

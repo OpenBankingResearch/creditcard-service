@@ -18,6 +18,6 @@ namespace CreditCardAPI.MongoRepository
             mongoDatabases = client.GetDatabase(settings.Value.Database);
         }
 
-        public IMongoCollection<CreditCard> CreditCards { get { return mongoDatabases.GetCollection<CreditCard>("creditcard"); } }
+        public IMongoCollection<CreditCard> CreditCards { get { return mongoDatabases.GetCollection<CreditCard>("creditCard"); } }
     }
 }
