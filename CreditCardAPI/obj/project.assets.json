@@ -13068,31 +13068,29 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pac\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/user/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pac\\Documents\\Visual Studio 2017\\Projects\\CreditCardAPI\\CreditCardAPI\\CreditCardAPI.csproj",
+      "projectUniqueName": "/Users/user/Documents/shell/hackathon/microservices/creditcard-service/CreditCardAPI/CreditCardAPI.csproj",
       "projectName": "CreditCardAPI",
-      "projectPath": "C:\\Users\\pac\\Documents\\Visual Studio 2017\\Projects\\CreditCardAPI\\CreditCardAPI\\CreditCardAPI.csproj",
-      "packagesPath": "C:\\Users\\pac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pac\\Documents\\Visual Studio 2017\\Projects\\CreditCardAPI\\CreditCardAPI\\obj\\",
+      "projectPath": "/Users/user/Documents/shell/hackathon/microservices/creditcard-service/CreditCardAPI/CreditCardAPI.csproj",
+      "packagesPath": "/Users/user/.nuget/packages/",
+      "outputPath": "/Users/user/Documents/shell/hackathon/microservices/creditcard-service/CreditCardAPI/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\pac\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/user/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
@@ -13108,18 +13106,18 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.All": {
-            "target": "Package",
-            "version": "[2.0.7, )"
-          },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0.0",
             "autoReferenced": true
+          },
+          "Microsoft.AspNetCore.All": {
+            "target": "Package",
+            "version": "2.0.7"
           },
           "MongoDB.Driver": {
             "target": "Package",
-            "version": "[2.6.0, )"
+            "version": "2.6.0"
           }
         },
         "imports": [
