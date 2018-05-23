@@ -4,10 +4,12 @@ using System;
 
 namespace CreditCardAPI.Model
 {
+    [Serializable]
+    [BsonIgnoreExtraElements]
     public class CreditCard
     {
-        [BsonId]
-        public ObjectId _id { get; set; }
+        //[BsonId]
+        //public ObjectId _id { get; set; }
 
         public string customerId { get; set; }
 

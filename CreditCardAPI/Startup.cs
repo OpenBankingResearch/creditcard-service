@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CreditCardAPI.Audit;
+using CreditCardAPI.Cache;
 using CreditCardAPI.Model;
 using CreditCardAPI.MongoRepository;
 using Microsoft.AspNetCore.Builder;
@@ -34,6 +36,8 @@ namespace CreditCardAPI
                     = Configuration.GetSection("MongoConnection:Database").Value;
             });
             services.AddTransient<ICreditCardRepository, CreditCardRepository>();
+            services.AddTransient<ICacheRepository, CacheRepository>();
+            services.AddTransient<IAuditHandler, AuditHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
