@@ -19,8 +19,6 @@ namespace CreditCardAPI.UnitTest
         [TestMethod]
         public void CreditCardController_Get__Null_Cache_Database()
         {
-            mockedCreditCardRepository.Setup(s => s.GetCreditCard(It.IsAny<string>())).Returns(() => null);
-            mockedCacheRepository.Setup(s => s.GetAsync(It.IsAny<string>())).Returns(() => null);
             mockedAuditHandler.Setup(s => s.Post(It.IsAny<Audit.Audit>())).Verifiable();
             CreditCardController creditCardController = new CreditCardController(mockedCreditCardRepository.Object, mockedCacheRepository.Object, mockedAuditHandler.Object);
             var result = creditCardController.Get(string.Empty);
@@ -43,7 +41,6 @@ namespace CreditCardAPI.UnitTest
         public void CreditCardController_Get_CreditCard()
         {
             CreditCard creditCard = new CreditCard();
-            mockedCacheRepository.Setup(s => s.GetAsync(It.IsAny<string>())).Returns(() => null);
             mockedAuditHandler.Setup(s => s.Post(It.IsAny<Audit.Audit>())).Verifiable();
             mockedCreditCardRepository.Setup(s => s.GetCreditCard(It.IsAny<string>())).Returns(() => Task.FromResult(creditCard));
             CreditCardController creditCardController = new CreditCardController(mockedCreditCardRepository.Object, mockedCacheRepository.Object, mockedAuditHandler.Object);
