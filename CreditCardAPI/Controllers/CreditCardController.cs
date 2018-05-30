@@ -53,15 +53,16 @@ namespace CreditCardAPI.Controllers
         {
             var audit = new Audit.Audit
             {
-                Category = "System call audit",
-                Description = description,
-                FullyQualifiedClassName = "CreditCardController",
-                DescriptionId = descriptionId,
-                Id = descriptionId,
-                MethodName = "Get",
-                Severity = "Information",
-                TimeStamp = DateTime.Now,
-                User = id
+                category = "System call audit",
+                description = description,
+                fullyQualifiedClassName = "CreditCardController",
+                descriptionId = descriptionId.ToString(),
+                id = id,
+                methodName = "Get",
+                severity = "Information",
+                timeStamp = DateTime.Now.ToString(),
+                user = id,
+                data = new object()
             };
             auditHandler.Post(audit);
         }
